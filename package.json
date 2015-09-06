@@ -1,0 +1,26 @@
+{
+  "name": "do-you-even-bench",
+  "version": "1.0.0",
+  "description": "quick and dirty benchmark.js wrapper",
+  "main": "index.js",
+  "dependencies": {
+    "benchmark": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanpenner/do-you-even-bench.git"
+  },
+  "keywords": [
+    "benchmark"
+  ],
+  "author": "Stefan Penner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefanpenner/do-you-even-bench/issues"
+  },
+  "homepage": "https://github.com/stefanpenner/do-you-even-bench#readme"
+}
