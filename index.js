@@ -25,6 +25,8 @@ function padRight(input, count, padder) {
 function n(number) {
   var result = Benchmark.formatNumber(number);
   var match = result.match(/(.*)\.(\d{0,2}).*$/, '');
+  if (!match) { return result; }
+
   var full = match[1];
   var dec = match[2];
 
