@@ -1,6 +1,6 @@
 {
   "name": "do-you-even-bench",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "quick and dirty benchmark.js wrapper",
   "main": "index.js",
   "dependencies": {
