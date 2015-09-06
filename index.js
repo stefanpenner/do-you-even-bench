@@ -8,22 +8,52 @@ function log(message) {
   } else  {
     console.log(message);
   }
+
+  return message.length;
+}
+
+function pad(input, count, padder) {
+  var length = String(input).length;
+  return input + new Array(Math.max(1, count + 1 - length)).join(padder);
+}
+
+function padRight(input, count, padder) {
+  var length = String(input).length;
+  return new Array(Math.max(1, count + 1 - length)).join(padder) + input;
+}
+
+function n(number) {
+  var result = Benchmark.formatNumber(number);
+  var match = result.match(/(.*)\.(\d{0,2}).*$/, '');
+  var full = match[1];
+  var dec = match[2];
+
+  return full + '.' + pad(dec, 2, '0');
 }
 
 module.exports = function(suites) {
   var suite = new Benchmark.Suite();
 
   log('testing');
+
+  var nameWidth = 0;
+  var lineItemWidth = 0;
+
   suites.forEach(function(s) {
-    log('- ' + s.name);
-    suite.add(s.name, s.fn);
+    var length = log('- ' + s.name);
+    nameWidth = Math.max(length, nameWidth);
+    suite.add(s);
   });
 
   suite.on('cycle', function(event) {
-    log(String(event.target));
+    var length = log('  ' + pad(event.target.name + ' ',
+                                nameWidth + 1, '.') +
+                                padRight(' ' + n(event.target.hz, 1e2), 15, '.') +
+                                ' op/s')
+    lineItemWidth = Math.max(length, lineItemWidth);
   })
   .on('complete', function() {
-    log('Fastest is ' + this.filter('fastest').pluck('name'));
+    pad('', lineItemWidth, '-');
   });
 
   setTimeout(function() {
