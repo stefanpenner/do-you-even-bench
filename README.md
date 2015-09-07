@@ -33,5 +33,5 @@ require('do-you-even-bench', [
 ```sh
 curl http://git.io/vZtJK > index.html
 browserify <file-containing-test.js> > out.js
-
+open index.html
 ```
