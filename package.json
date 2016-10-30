@@ -4,7 +4,7 @@
   "description": "quick and dirty benchmark.js wrapper",
   "main": "index.js",
   "dependencies": {
-    "benchmark": "^1.0.0"
+    "benchmark": "^2.0.0"
   },
   "devDependencies": {},
   "scripts": {
