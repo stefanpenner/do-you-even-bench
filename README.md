@@ -13,11 +13,12 @@ require('do-you-even-bench')([
 #### example /w setup
 
 ```js
+var data;
 require('do-you-even-bench', [
   {
     name: 'test 1',
     setup: function() {
-      var data = calcuateData();
+      data = calcuateData();
     },
 
     fn: function() { 
