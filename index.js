@@ -56,6 +56,10 @@ module.exports = function(suites) {
   })
   .on('complete', function() {
     pad('', lineItemWidth, '-');
+    console.log('fastest: ' + this.filter('fastest').map('name'));
+  })
+  .on('error', function (err) {
+    console.error(err);
   });
 
   setTimeout(function() {
